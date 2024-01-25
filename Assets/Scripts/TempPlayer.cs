@@ -14,13 +14,13 @@ public class TempPlayer : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Interactable") {
-            other.gameObject.transform.localScale = other.gameObject.transform.localScale*1.2f;
+            other.gameObject.GetComponent<InteractableBase>().Activate();
         }
     }
 
     void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "Interactable") {
-            other.gameObject.transform.localScale = other.gameObject.transform.localScale/1.2f;
+            other.gameObject.GetComponent<InteractableBase>().Deactivate();
         }
     }
 }

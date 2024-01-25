@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2863563250637710505}
   - component: {fileID: 3192834443441400954}
   - component: {fileID: 5141324231007824267}
+  - component: {fileID: 7938939413838714992}
   m_Layer: 0
-  m_Name: InteractableItem
+  m_Name: Meds
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 27ef2561b5fc9a34fb9f336b81cb8796, type: 2}
+  - {fileID: 2100000, guid: cc4a2c655b3bd714c8ea1e44ede6a010, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,5 +128,17 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 2
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &7938939413838714992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887231534443475128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38214ee8484d0a54d88cf74387ff1cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
