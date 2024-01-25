@@ -11,4 +11,16 @@ public class TempPlayer : MonoBehaviour
             StartCoroutine(other.gameObject.GetComponent<GrabberEnemy>().Attack());
         }
     }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Interactable") {
+            other.gameObject.transform.localScale = other.gameObject.transform.localScale*1.2f;
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if (other.gameObject.tag == "Interactable") {
+            other.gameObject.transform.localScale = other.gameObject.transform.localScale/1.2f;
+        }
+    }
 }
