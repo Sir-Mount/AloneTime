@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Security.Claims;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -13,9 +9,10 @@ public class playerController : MonoBehaviour
     Vector3 velocity;
 
     float sanity = 100f;
-    public float sanityDepletion = 1f;
+    public float sanityDepletion = -1f;
 
     public AudioSource heartbeat;
+    public AudioSource breathing;
     
     void Update() {
         float x = Input.GetAxis("Horizontal");
@@ -28,12 +25,12 @@ public class playerController : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        sanity -= sanityDepletion * Time.deltaTime;
+        // sanity = sanityDepletion * Time.deltaTime;
+        adjustSanity(sanityDepletion * Time.deltaTime);
         sanity = Mathf.Clamp(sanity, 0f, 100f);
 
-        heartbeat.volume = map(sanity, 75f, 0f, 0f, 0.75f);
-        
-        print(heartbeat.volume.ToString());
+        heartbeat.volume = map(sanity, 50f, 0f, 0f, 0.5f);
+        breathing.volume = map(sanity, 75f, 0f, 0f, 0.5f);
     }
 
     public void adjustSanity(float amount) {
