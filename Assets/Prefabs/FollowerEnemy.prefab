@@ -129,10 +129,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &210814165087660194
 MonoBehaviour:
@@ -155,5 +155,5 @@ MonoBehaviour:
   drop: {fileID: 0}
   dropChance: 1
   rotationSpeed: 0.1
-  accelerationSpeed: 20
-  moveSpeed: 10
+  accelerationSpeed: 5
+  moveSpeed: 2
