@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 2840002737048134763}
   - component: {fileID: 2817056487686197128}
   - component: {fileID: 6234711767342023830}
-  - component: {fileID: 3436145254945258261}
-  - component: {fileID: 210814165087660194}
+  - component: {fileID: 2686719815511575456}
+  - component: {fileID: 5223861839695178986}
   m_Layer: 0
-  m_Name: FollowerEnemy
-  m_TagString: Untagged
+  m_Name: GhostEnemy
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,40 +101,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3436145254945258261
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968709145640285028}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
---- !u!114 &210814165087660194
+--- !u!114 &2686719815511575456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,17 +116,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 968709145640285028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81a4a0ce65b5e1143b099d35cbe445ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 35204945d5081934fb025e9abc258678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 1
-  damageable: 0
-  enemyHitPoints: 1
-  invincibilityTime: 0
-  speed: 1
-  rb: {fileID: 3436145254945258261}
-  drop: {fileID: 0}
-  dropChance: 1
-  rotationSpeed: 0.1
-  accelerationSpeed: 5
-  moveSpeed: 2
+  moveSpeed: 1
+  controller: {fileID: 5223861839695178986}
+--- !u!143 &5223861839695178986
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968709145640285028}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}

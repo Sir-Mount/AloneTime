@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grabber
   - Interactable
+  - Ghost
   layers:
   - Default
   - TransparentFX

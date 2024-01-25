@@ -7,8 +7,14 @@ public class GrabberEnemy : MonoBehaviour
     
     public bool attackOnCooldown = false;
 
+    public float sanityLoss = -10f;
+
     public IEnumerator Attack() {
-        Debug.Log("whack");
+        // Debug.Log("whack");
+        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<playerController>().adjustSanity(sanityLoss);
+        
         gameObject.transform.localScale = new Vector3(transform.localScale.x, 2, transform.localScale.z);
         attackOnCooldown = true;
         yield return new WaitForSecondsRealtime(attackCooldownTime);

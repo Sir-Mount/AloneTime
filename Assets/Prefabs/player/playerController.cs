@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -9,7 +10,7 @@ public class playerController : MonoBehaviour
     Vector3 velocity;
 
     float sanity = 100f;
-    public float sanityDepletion = -1f;
+    public float sanityDepletion = -2f;
 
     public AudioSource heartbeat;
     public AudioSource breathing;
@@ -28,16 +29,14 @@ public class playerController : MonoBehaviour
         sanity -= sanityDepletion * Time.deltaTime;
         sanity = Mathf.Clamp(sanity, 0f, 100f);
 
-        heartbeat.volume = map(sanity, 50f, 0f, 0f, 0.5f);
+        heartbeat.volume = map(sanity, 50f, 0f, 0f, 0.75f);
         breathing.volume = map(sanity, 75f, 0f, 0f, 0.5f);
         
         print(sanity.ToString());
     }
     
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Grabber" && !other.gameObject.GetComponent<GrabberEnemy>().attackOnCooldown)
-        {
+    void OnTriggerStay(Collider other) {
+        if (other.gameObject.tag == "Grabber" && !other.gameObject.GetComponent<GrabberEnemy>().attackOnCooldown){
             StartCoroutine(other.gameObject.GetComponent<GrabberEnemy>().Attack());
         }
     }
@@ -45,6 +44,11 @@ public class playerController : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Interactable") {
             other.gameObject.GetComponent<InteractableBase>().Activate();
+        }
+        
+        if (other.gameObject.tag == "Ghost"){
+            adjustSanity(other.gameObject.GetComponent<GhostEnemy>().sanityLoss);
+            Destroy(other.gameObject);
         }
     }
 
