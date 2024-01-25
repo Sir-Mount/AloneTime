@@ -1,7 +1,7 @@
 .mainmenubutton {
     -unity-font-definition: url('project://database/Assets/Tim%20Folder/ColoredCrayons-7wPR%20SDF.asset?fileID=11400000&guid=ad0ee958100c2cb4a916578e52406405&type=2#ColoredCrayons-7wPR SDF');
     font-size: 30px;
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.59);
     text-shadow: 2px 2px 0 rgb(4, 41, 0);
     -unity-text-outline-color: rgba(4, 41, 0, 0);
     background-color: rgba(0, 0, 0, 0);
