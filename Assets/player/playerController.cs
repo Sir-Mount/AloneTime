@@ -25,12 +25,13 @@ public class playerController : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        // sanity = sanityDepletion * Time.deltaTime;
-        adjustSanity(sanityDepletion * Time.deltaTime);
+        sanity -= sanityDepletion * Time.deltaTime;
         sanity = Mathf.Clamp(sanity, 0f, 100f);
 
         heartbeat.volume = map(sanity, 50f, 0f, 0f, 0.5f);
         breathing.volume = map(sanity, 75f, 0f, 0f, 0.5f);
+        
+        print(sanity.ToString());
     }
 
     public void adjustSanity(float amount) {
