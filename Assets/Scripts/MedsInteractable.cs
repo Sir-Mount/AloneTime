@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class MedsInteractable : InteractableBase
 {
+    public float sanityGain = 20f;
+    
     public override void Activate() {
-        // hier logic voor sanity++, daarna delete
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<playerController>().adjustSanity(sanityGain);
+        
         base.Delete();
     }
 }

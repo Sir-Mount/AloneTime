@@ -33,6 +33,26 @@ public class playerController : MonoBehaviour
         
         print(sanity.ToString());
     }
+    
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Grabber" && !other.gameObject.GetComponent<GrabberEnemy>().attackOnCooldown)
+        {
+            StartCoroutine(other.gameObject.GetComponent<GrabberEnemy>().Attack());
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Interactable") {
+            other.gameObject.GetComponent<InteractableBase>().Activate();
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if (other.gameObject.tag == "Interactable") {
+            other.gameObject.GetComponent<InteractableBase>().Deactivate();
+        }
+    }
 
     public void adjustSanity(float amount) {
         sanity += amount;
