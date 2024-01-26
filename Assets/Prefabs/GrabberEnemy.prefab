@@ -258,3 +258,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldownTime: 2
   attackOnCooldown: 0
+  sanityLoss: -10

@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -14,6 +14,10 @@ public class playerController : MonoBehaviour
 
     public AudioSource heartbeat;
     public AudioSource breathing;
+
+    public Text clock;
+    public float minute = 0;
+    public int hour = 1;
     
     void Update() {
         float x = Input.GetAxis("Horizontal");
@@ -29,10 +33,12 @@ public class playerController : MonoBehaviour
         sanity -= sanityDepletion * Time.deltaTime;
         sanity = Mathf.Clamp(sanity, 0f, 100f);
 
-        heartbeat.volume = map(sanity, 50f, 0f, 0f, 0.75f);
+        heartbeat.volume = map(sanity, 50f, 0f, 0f, 1f);
         breathing.volume = map(sanity, 75f, 0f, 0f, 0.5f);
         
         print(sanity.ToString());
+
+        doTime();
     }
     
     void OnTriggerStay(Collider other) {
@@ -56,6 +62,18 @@ public class playerController : MonoBehaviour
         if (other.gameObject.tag == "Interactable") {
             other.gameObject.GetComponent<InteractableBase>().Deactivate();
         }
+    }
+
+    void doTime() {
+        minute += Time.deltaTime;
+        float actualMinute = Mathf.Floor(minute);
+
+        if(minute >= 60f){
+            minute = 0f;
+            hour++;
+        }
+        
+        clock.text = hour.ToString("00") + ":" + actualMinute.ToString("00");
     }
 
     public void adjustSanity(float amount) {
