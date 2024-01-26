@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
@@ -15,9 +16,19 @@ public class playerController : MonoBehaviour
     public AudioSource heartbeat;
     public AudioSource breathing;
 
+    public PostProcessVolume postProc;
+    Vignette v;
+    ColorGrading c;
+    
     public Text clock;
     public float minute = 0;
     public int hour = 1;
+
+    void Start() {
+        postProc = postProc.GetComponent<PostProcessVolume>();
+        postProc.profile.TryGetSettings(out v);
+        postProc.profile.TryGetSettings(out c);
+    }
     
     void Update() {
         float x = Input.GetAxis("Horizontal");
@@ -35,8 +46,12 @@ public class playerController : MonoBehaviour
 
         heartbeat.volume = map(sanity, 50f, 0f, 0f, 1f);
         breathing.volume = map(sanity, 75f, 0f, 0f, 0.5f);
+
+        v.intensity.value = map(sanity, 100f, 0f, 0f, 0.5f);
+        c.saturation.value = map(sanity, 100f, 0f, 0f, -100f);
         
-        print(sanity.ToString());
+        
+        print( v.intensity.value.ToString());
 
         doTime();
     }
