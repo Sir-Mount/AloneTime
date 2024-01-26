@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EnemyTest.unity
-    guid: 799ff957e7f5af448af059df7302db11
+    path: Assets/Tim Folder/UI Scene.unity
+    guid: cc03a6d3810cfb74f8a67d24f6bb10df
+  - enabled: 1
+    path: Assets/Tim Folder/TransitionToScene.unity
+    guid: ebd0e6f23a9527b48bcfc50935ea0cdb
+  - enabled: 1
+    path: Assets/Tim Folder/Lose Scene/Lose Scene.unity
+    guid: fb7dc47776602714cb03be96a61a81d5
   m_configObjects: {}

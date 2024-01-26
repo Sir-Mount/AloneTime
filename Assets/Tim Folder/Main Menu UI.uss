@@ -1,0 +1,32 @@
+.mainmenubutton {
+    -unity-font-definition: url('project://database/Assets/Tim%20Folder/ColoredCrayons-7wPR%20SDF.asset?fileID=11400000&guid=ad0ee958100c2cb4a916578e52406405&type=2#ColoredCrayons-7wPR SDF');
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.59);
+    text-shadow: 2px 2px 0 rgb(4, 41, 0);
+    -unity-text-outline-color: rgba(4, 41, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    -unity-slice-scale: 0;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    cursor: url('project://database/Assets/Tim%20Folder/Red_and_White_Pill_Capsule_PNG_Clipart-360.png?fileID=2800000&guid=65b209207ca0dda47a710433df2bce7a&type=3#Red_and_White_Pill_Capsule_PNG_Clipart-360');
+}
+
+.mainmenubutton:hover {
+    -unity-font-definition: url('project://database/Assets/Tim%20Folder/ColoredCrayons-7wPR%20SDF.asset?fileID=11400000&guid=ad0ee958100c2cb4a916578e52406405&type=2#ColoredCrayons-7wPR SDF');
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 0 rgb(4, 41, 0);
+    -unity-text-outline-color: rgba(4, 41, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    -unity-slice-scale: 0;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    cursor: url('project://database/Assets/Tim%20Folder/Red_and_White_Pill_Capsule_PNG_Clipart-360.png?fileID=2800000&guid=65b209207ca0dda47a710433df2bce7a&type=3#Red_and_White_Pill_Capsule_PNG_Clipart-360');
+    scale: 1.25 1.25;
+}
